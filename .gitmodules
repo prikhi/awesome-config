@@ -1,0 +1,3 @@
+[submodule "tyrannical"]
+	path = tyrannical
+	url = http://github.com/Elv13/tyrannical.git
