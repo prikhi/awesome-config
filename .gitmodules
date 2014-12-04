@@ -1,3 +1,9 @@
 [submodule "tyrannical"]
 	path = tyrannical
 	url = http://github.com/Elv13/tyrannical.git
+[submodule "lain"]
+	path = lain
+	url = http://github.com/copycat-killer/lain.git
+[submodule "awesome-copycats"]
+	path = awesome-copycats
+	url = http://github.com/copycat-killer/awesome-copycats

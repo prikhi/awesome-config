@@ -1,4 +1,6 @@
-function HTML_ToText (text)
+local M = {}
+
+function M.HTML_ToText (text)
   -- Declare variables, load the file. Make tags lowercase.
    text = string.gsub (text,"(%b<>)",
   function (tag)
@@ -93,3 +95,5 @@ function HTML_ToText (text)
   return text
 
 end
+
+return M
