@@ -82,19 +82,13 @@ modkey = "Mod4"
 local layouts =
 {
     awful.layout.suit.tile,
-    lain.layout.centerwork,
-    lain.layout.termfair,
+    awful.layout.suit.tile.left,
     awful.layout.suit.tile.bottom,
+    awful.layout.suit.tile.top,
     awful.layout.suit.fair,
     awful.layout.suit.fair.horizontal,
     awful.layout.suit.floating,
 }
-
--- Set fill order of lain.layout.centerwork
-lain.layout.centerwork.top_left = 0
-lain.layout.centerwork.bottom_left = 1
-lain.layout.centerwork.top_right = 2
-lain.layout.centerwork.bottom_right = 3
 -- }}}
 
 
@@ -108,7 +102,7 @@ tyrannical.tags = {
     {
         name = "term",
         init = true,
-        layout = lain.layout.centerwork,
+        layout = awful.layout.tile,
         mwfact = 0.55,
         screen = {1,2},
     },
@@ -123,7 +117,7 @@ tyrannical.tags = {
     {
         name = "code",
         init = true,
-        layout = lain.layout.centerwork,
+        layout = awful.layout.tile,
         mwfact = 0.55,
         screen = {1, 2},
     },
