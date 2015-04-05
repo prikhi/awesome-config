@@ -506,11 +506,11 @@ globalkeys = awful.util.table.join(
 
     -- MPD Controls prev/next/toggle
     awful.key({ modkey, "Shift" }, ",",
-            function () awful.util.spawn_with_shell("mpc prev"); mpdwidget.update() end),
+            function () awful.util.spawn_with_shell("mpc -h /tmp/mpd.sock prev"); mpdwidget.update() end),
     awful.key({ modkey, "Shift" }, ".",
-            function () awful.util.spawn_with_shell("mpc next"); mpdwidget.update() end),
+            function () awful.util.spawn_with_shell("mpc -h /tmp/mpd.sock next"); mpdwidget.update() end),
     awful.key({ modkey, "Shift" }, "p",
-            function () awful.util.spawn_with_shell("mpc toggle"); mpdwidget.update() end),
+            function () awful.util.spawn_with_shell("mpc -h /tmp/mpd.sock toggle"); mpdwidget.update() end),
 
     -- Remove one notification
     awful.key({ modkey, "Shift" }, "w", function () destroy_one_notification() end),
