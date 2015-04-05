@@ -261,7 +261,7 @@ cpuwidget = wibox.widget.background(lain.widgets.cpu({
 neticon = wibox.widget.imagebox(beautiful.widget_net)
 neticonbg = wibox.widget.background(neticon, alt_bg)
 netwidget = wibox.widget.background(lain.widgets.net({
-    iface = "wlan0",
+    iface = "eth0",
     settings = function()
         widget:set_markup(
             markup.bg.color(alt_bg,
