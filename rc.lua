@@ -164,9 +164,13 @@ tyrannical.tags = {
             , 'RogueCastle.bin.x86_64'
             , 'Wine'
             , 'X3TC_main'
+            , 'csgo_linux'
             , 'dota_linux'
             , 'ns2_linux32'
             , 'superhexagon.x86_64'
+            , 'Pcsx2'
+            , 'Dolphin-emu'
+            , 'Torchlight2.bin.x86_64'
         },
         volatile = true,
     },
@@ -745,6 +749,8 @@ ignore_transparency_classes = {
                               , "Pencil"
                               , "Pinta"
                               -- Games
+                              , 'Pcsx2'
+                              , 'Dolphin-emu'
                               , 'Civ5XP'
                               , 'DefendersQuest'
                               , 'FrozenSynapse'
@@ -753,8 +759,10 @@ ignore_transparency_classes = {
                               , 'Wine'
                               , 'X3TC_main'
                               , 'dota_linux'
+                              , 'csgo_linux'
                               , 'ns2_linux32'
                               , 'superhexagon.x86_64'
+                              , 'Torchlight2.bin.x86_64'
                               }
 -- Names of Clients to Make Opaque
 ignore_transparency_names = {
