@@ -60,34 +60,6 @@ end
 -- }}}
 
 
--- {{{ Autostart Applications
-r.run("firefox")
-
--- Terminal Daemon
-r.run("urxvtd -f -o -q")
--- Start the PulseAudio SysTray
-r.run("pasystray")
--- Remove old mounted folders
-r.run("udevil clean")
--- Hide the Mouse
-r.run("unclutter -idle 2")
--- Start RSI Prevention Program
-r.run("workrave")
--- Autostart Email Screen Session
-r.run("bash /home/prikhi/.bin/start_split")
-
--- LAN Chat
-r.run("mumble")
--- WAN Chat
-r.run("pidgin")
--- KeePassX Password Manager
-r.run("keepassx -min -lock")
-
--- Enable Transparency/Composting
-r.run("compton -b")
--- }}}
-
-
 -- {{{ Variable definitions
 -- Localization
 os.setlocale(os.getenv("LANG"))
@@ -872,4 +844,32 @@ function destroy_one_notification()
     return false
 end
 
+-- }}}
+
+
+-- {{{ Autostart Applications
+r.run("firefox")
+
+-- Terminal Daemon
+r.run("urxvtd -f -o -q")
+-- Start the PulseAudio SysTray
+r.run("pasystray")
+-- Remove old mounted folders
+r.run("udevil clean")
+-- Hide the Mouse
+r.run("unclutter -idle 2")
+-- Start RSI Prevention Program
+r.run("workrave")
+-- Autostart Email Screen Session
+r.run("bash /home/prikhi/.bin/start_split")
+
+-- LAN Chat
+r.run("mumble")
+-- WAN Chat
+r.run("pidgin")
+-- KeePassX Password Manager
+r.run("keepassx -min -lock")
+
+-- Enable Transparency/Composting
+r.run("compton -b")
 -- }}}
