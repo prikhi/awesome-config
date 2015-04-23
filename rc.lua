@@ -863,21 +863,18 @@ end
 
 
 -- {{{ Autostart Applications
-r.run("firefox")
 
 -- Terminal Daemon
 r.run("urxvtd -f -o -q")
--- Start the PulseAudio SysTray
-r.run("pasystray")
--- Remove old mounted folders
-r.run("udevil clean")
+-- Jackd Audio Server
+r.run("cadence-session-start --system-start")
+-- Music Player Daemon
+r.run("mpd")
 -- Hide the Mouse
 r.run("unclutter -idle 2")
+
 -- Start RSI Prevention Program
 r.run("workrave")
--- Autostart Email Screen Session
-r.run("bash /home/prikhi/.bin/start_split")
-
 -- LAN Chat
 r.run("mumble")
 -- WAN Chat
@@ -887,4 +884,14 @@ r.run("keepassx -min -lock")
 
 -- Enable Transparency/Composting
 r.run("compton -b")
+
+-- Start Jack Patch Bay
+r.run("claudia --minimized")
+-- Autostart Email Screen Session
+r.run("bash /home/prikhi/.bin/start_split")
+
+-- Remove old mounted folders
+r.run("udevil clean")
+
+r.run("firefox")
 -- }}}
