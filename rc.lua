@@ -167,6 +167,21 @@ tyrannical.tags = {
         volatile = true,
     },
     {
+        name = "audio",
+        init = false,
+        layout = awful.layout.suit.floating,
+        screen = {1, 2},
+        class = {
+              "Jack_mixer"
+            , "Jamin"
+            , "Logs.py"
+            , "Claudia.py"
+            , "Catia.py"
+            , "Cadence.py"
+        },
+        volatile = true,
+    },
+    {
         name = "vm",
         init = false,
         layout = awful.layout.suit.floating,
