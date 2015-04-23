@@ -111,6 +111,7 @@ theme.tasklist_maximized_vertical   = "| "
 theme.lain_icons                    = os.getenv("HOME") ..
                                       "/.config/awesome/lain/icons/layout/default/"
 theme.layout_termfair               = theme.lain_icons .. "termfairw.png"
+theme.layout_centerfair             = theme.lain_icons .. "centerfairw.png"
 theme.layout_cascade                = theme.lain_icons .. "cascadew.png"
 theme.layout_cascadetile            = theme.lain_icons .. "cascadetilew.png"
 theme.layout_centerwork             = theme.lain_icons .. "centerworkw.png"
