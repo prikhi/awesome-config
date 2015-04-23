@@ -38,10 +38,8 @@ end
 
 local function writePid(filename, pid)
     local pidFile = io.open(filename, "w+")
-    if not pid == nil then
-        pidFile:write(pid)
-        pidFile:close()
-    end
+    pidFile:write(pid)
+    pidFile:close()
 end
 
 local function shallExecute(oldPid, newPid)
