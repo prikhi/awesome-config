@@ -81,6 +81,49 @@ local layouts =
     awful.layout.suit.fair.horizontal,
     awful.layout.suit.floating,
 }
+
+-- Classes of Clients to Make Opaque
+local ignore_transparency_classes = {
+                              -- Media
+                                'Smplayer'
+                              , 'Mcomix'
+                              , 'Mirage'
+                              , 'Vlc'
+                              , 'mpv'
+                              -- Audio
+                              , "Jack_mixer"
+                              , "Jamin"
+                              , "Logs.py"
+                              , "Claudia.py"
+                              , "Catia.py"
+                              , "Cadence.py"
+                              -- Drawing
+                              , "Gimp"
+                              , "Pencil"
+                              , "Pinta"
+                              -- Games
+                              , 'Pcsx2'
+                              , 'Dolphin-emu'
+                              , 'Civ5XP'
+                              , 'DefendersQuest'
+                              , 'FrozenSynapse'
+                              , 'Psychonauts'
+                              , 'RogueCastle.bin.x86_64'
+                              , 'Wine'
+                              , 'X3TC_main'
+                              , 'dota_linux'
+                              , 'csgo_linux'
+                              , 'ns2_linux32'
+                              , 'superhexagon.x86_64'
+                              , 'Torchlight2.bin.x86_64'
+                              }
+-- Names of Clients to Make Opaque
+local ignore_transparency_names = {
+                            -- Games
+                              'Guild Wars 2'
+                            , 'Minecraft 1.7.2'
+                            , 'Binding of Isaac: Rebirth v1.0'
+                            }
 -- }}}
 
 
@@ -741,43 +784,6 @@ client.connect_signal("manage", function (c, startup)
         awful.titlebar(c):set_widget(layout)
     end
 end)
-
--- Ignore Transparency
--- Classes of Clients to Make Opaque
-ignore_transparency_classes = {
-                              -- Media
-                                'Smplayer'
-                              , 'Mcomix'
-                              , 'Mirage'
-                              , 'Vlc'
-                              , 'mpv'
-                              -- Drawing
-                              , "Gimp"
-                              , "Pencil"
-                              , "Pinta"
-                              -- Games
-                              , 'Pcsx2'
-                              , 'Dolphin-emu'
-                              , 'Civ5XP'
-                              , 'DefendersQuest'
-                              , 'FrozenSynapse'
-                              , 'Psychonauts'
-                              , 'RogueCastle.bin.x86_64'
-                              , 'Wine'
-                              , 'X3TC_main'
-                              , 'dota_linux'
-                              , 'csgo_linux'
-                              , 'ns2_linux32'
-                              , 'superhexagon.x86_64'
-                              , 'Torchlight2.bin.x86_64'
-                              }
--- Names of Clients to Make Opaque
-ignore_transparency_names = {
-                            -- Games
-                              'Guild Wars 2'
-                            , 'Minecraft 1.7.2'
-                            , 'Binding of Isaac: Rebirth v1.0'
-                            }
 
 -- Set a Client to Opaque if Listed
 local function ignore_transparency(c)
