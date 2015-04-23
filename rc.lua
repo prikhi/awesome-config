@@ -808,7 +808,7 @@ client.connect_signal("focus",
         else
             c.border_color = beautiful.border_focus
         end
-        c.opacity = .92
+        c.opacity = .95
         ignore_transparency(c)
     end
 )
