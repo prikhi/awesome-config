@@ -247,7 +247,8 @@ tyrannical.properties.size_hints_honor = {
 
 
 -- {{{ Menu
-require("freedesktop/freedesktop")
+mymainmenu = awful.menu.new({ items = require('menugen').build_menu(),
+                              theme = { height = 16, width = 130 }})
 
 --- }}}
 
