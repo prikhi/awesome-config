@@ -124,6 +124,12 @@ local ignore_transparency_names = {
                             , 'Minecraft 1.7.2'
                             , 'Binding of Isaac: Rebirth v1.0'
                             }
+
+-- Commnds to Run on Shutdown
+local shutdown_commands = function()
+    awful.util.spawn_with_shell("mpd --kill")
+    awesome.quit()
+end
 -- }}}
 
 
@@ -481,7 +487,7 @@ globalkeys = awful.util.table.join(
     -- Standard program
     awful.key({ modkey,           }, "Return", function () awful.util.spawn(terminal) end),
     awful.key({ modkey, "Control" }, "r", awesome.restart),
-    awful.key({ modkey, "Shift"   }, "q", awesome.quit),
+    awful.key({ modkey, "Shift"   }, "q", shutdown_commands),
 
     awful.key({ modkey, "Shift"   }, "l",     function () awful.tag.incmwfact( 0.05)    end),
     awful.key({ modkey, "Shift"   }, "h",     function () awful.tag.incmwfact(-0.05)    end),
