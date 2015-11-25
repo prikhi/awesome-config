@@ -116,11 +116,14 @@ local ignore_transparency_classes = {
                               , 'ns2_linux32'
                               , 'superhexagon.x86_64'
                               , 'Torchlight2.bin.x86_64'
+                              , 'Mainwindow.py' -- PlayOnLinux
+                              , 'eu4'
                               }
 -- Names of Clients to Make Opaque
 local ignore_transparency_names = {
                             -- Games
                               'Guild Wars 2'
+                            , 'PlayOnLinux'
                             , 'Minecraft 1.7.2'
                             , 'Binding of Isaac: Rebirth v1.0'
                             }
@@ -212,6 +215,8 @@ tyrannical.tags = {
             , 'Pcsx2'
             , 'Dolphin-emu'
             , 'Torchlight2.bin.x86_64'
+            , 'Mainwindow.py' -- PlayOnLinux
+            , 'eu4'
         },
         volatile = true,
     },
