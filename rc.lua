@@ -574,6 +574,10 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, "Shift" }, "p",
             function () awful.util.spawn_with_shell("mpc -h /tmp/mpd.sock toggle"); mpdwidget.update() end),
 
+    -- Toggle Transparency
+    awful.key({ modkey,         }, "F12",
+            function () awful.util.spawn_with_shell("pkill compton || compton -b") end),
+
     -- Remove one notification
     awful.key({ modkey, "Shift" }, "w", function () destroy_one_notification() end),
     -- Remove all notifications
