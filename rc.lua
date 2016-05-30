@@ -121,8 +121,10 @@ local ignore_transparency_classes = {
                               }
 -- Names of Clients to Make Opaque
 local ignore_transparency_names = {
+                            -- Apps
+                              'libreoffice'
                             -- Games
-                              'Guild Wars 2'
+                            , 'Guild Wars 2'
                             , 'PlayOnLinux'
                             , 'Minecraft 1.7.2'
                             , 'Binding of Isaac: Rebirth v1.0'
@@ -192,6 +194,17 @@ tyrannical.tags = {
         exclusive = true,
         screen = {1},
         class = {"Gimp", "Pencil",},
+        volatile = true,
+    },
+    {
+        name = "office",
+        init = false,
+        layout = awful.layout.suit.floating,
+        exclusive = true,
+        screen = {1},
+        class = {
+            "libreoffice-calc", "libreoffice-draw", "libreoffice-writer"
+        },
         volatile = true,
     },
     {
