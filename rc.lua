@@ -587,6 +587,9 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, "Shift" }, "p",
             function () awful.util.spawn_with_shell("mpc -h /tmp/mpd.sock toggle"); mpdwidget.update() end),
 
+    -- Toggle Workrave
+    awful.key({ modkey,         }, "F11",
+            function () awful.util.spawn_with_shell("pkill workrave || workrave &") end),
     -- Toggle Transparency
     awful.key({ modkey,         }, "F12",
             function () awful.util.spawn_with_shell("pkill compton || compton -b") end),
