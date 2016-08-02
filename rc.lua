@@ -118,6 +118,7 @@ local ignore_transparency_classes = {
                               , 'Torchlight2.bin.x86_64'
                               , 'Mainwindow.py' -- PlayOnLinux
                               , 'eu4'
+                              , 'KOTOR2'
                               }
 -- Names of Clients to Make Opaque
 local ignore_transparency_names = {
@@ -253,7 +254,7 @@ tyrannical.tags = {
         init = false,
         layout = awful.layout.suit.floating,
         screen = {1,2},
-        class = {"VirtualBox"},
+        class = { "VirtualBox", "virt-manager" },
         volatile = true,
     }
 }
@@ -262,7 +263,7 @@ tyrannical.properties.intrusive = {
 }
 tyrannical.properties.floating = {
     "Mumble", "Steam", "Guild Wars 2", "VirtualBox", "Skype", "Mumble", "gimp",
-    "Wine", "pinentry", "Keepassx", "Pidgin", "Pavucontrol"
+    "Wine", "pinentry", "Keepassx", "Pidgin", "Pavucontrol", "Filezilla"
 }
 tyrannical.properties.size_hints_honor = {
     xterm = false, URxvt = false, mpv = false, Gvim = false
