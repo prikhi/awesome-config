@@ -896,6 +896,9 @@ end
 
 -- {{{ Autostart Applications
 
+-- Remove old mounted folders
+r.run("udevil clean")
+
 -- Terminal Daemon
 r.run("urxvtd -f -o -q")
 -- Jackd Audio Server
@@ -904,29 +907,25 @@ r.run("cadence-session-start --system-start")
 r.run("mpd")
 -- Hide the Mouse
 r.run("unclutter -idle 2")
+-- Transparency/Composting
+r.run("compton -b")
 
 -- RSI Prevention
 r.run("workrave")
 -- Eye Strain Prevention
 r.run("systemctl --user start redshift-gtk")
+-- KeePassX Password Manager
+r.run("keepassx -min -lock")
+-- Email Screen Session
+r.run("bash /home/prikhi/.bin/start_split")
+
 -- LAN Chat
 r.run("mumble")
 -- WAN Chat
 r.run("pidgin")
--- KeePassX Password Manager
-r.run("keepassx -min -lock")
-
--- Enable Transparency/Composting
-r.run("compton -b")
-
--- Start Jack Patch Bay
+-- Jack Studio GUI
 r.run("claudia --minimized")
--- Autostart Email Screen Session
-r.run("bash /home/prikhi/.bin/start_split")
-
--- Remove old mounted folders
-r.run("udevil clean")
-
--- Start Pale Moon
+-- Web Browser
 r.run("palemoon")
+
 -- }}}
