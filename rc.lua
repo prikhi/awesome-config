@@ -158,7 +158,7 @@ tyrannical.tags = {
         exclusive = true,
         no_focus_stealing = true,
         screen = {1,2},
-        class = {"Chromium", "Firefox"},
+        class = {"Chromium", "Firefox", "Pale moon"},
     },
     {
         name = "code",
@@ -905,8 +905,10 @@ r.run("mpd")
 -- Hide the Mouse
 r.run("unclutter -idle 2")
 
--- Start RSI Prevention Program
+-- RSI Prevention
 r.run("workrave")
+-- Eye Strain Prevention
+r.run("systemctl --user start redshift-gtk")
 -- LAN Chat
 r.run("mumble")
 -- WAN Chat
@@ -925,5 +927,6 @@ r.run("bash /home/prikhi/.bin/start_split")
 -- Remove old mounted folders
 r.run("udevil clean")
 
-r.run("firefox")
+-- Start Pale Moon
+r.run("palemoon")
 -- }}}
