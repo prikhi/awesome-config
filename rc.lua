@@ -151,14 +151,14 @@ tyrannical.tags = {
         init = true,
         layout = awful.layout.tile,
         mwfact = 0.55,
-        screen = {1,2},
+        screen = {1,2,3},
     },
     {
         name = "www",
         init = true,
         exclusive = true,
         no_focus_stealing = true,
-        screen = {1,2},
+        screen = {1,2,3},
         class = {"Chromium", "Firefox", "Pale moon"},
     },
     {
@@ -166,7 +166,7 @@ tyrannical.tags = {
         init = true,
         layout = awful.layout.tile,
         mwfact = 0.55,
-        screen = {1, 2},
+        screen = {1, 2, 3},
     },
     {
         name = "chat",
@@ -174,7 +174,7 @@ tyrannical.tags = {
         layout = awful.layout.suit.floating,
         exclusive = true,
         no_focus_stealing = true,
-        screen = {1, 2},
+        screen = {1, 2, 3},
         class = {"Skype", "Mumble", "Pidgin"},
         volatile = true,
     },
@@ -182,7 +182,7 @@ tyrannical.tags = {
         name = "media",
         init = false,
         exclusive = true,
-        screen = {1,2},
+        screen = {1,2,3},
         class = {
             "Smplayer", "Vlc", "mpv", "Mirage", "Mcomix", "Zathura", "feh"
         },
@@ -238,7 +238,7 @@ tyrannical.tags = {
         name = "audio",
         init = false,
         layout = awful.layout.suit.floating,
-        screen = {1, 2},
+        screen = {1, 2, 3},
         class = {
               "Jack_mixer"
             , "Jamin"
@@ -253,7 +253,7 @@ tyrannical.tags = {
         name = "vm",
         init = false,
         layout = awful.layout.suit.floating,
-        screen = {1,2},
+        screen = {1,2,3},
         class = { "VirtualBox", "virt-manager" },
         volatile = true,
     }
@@ -653,7 +653,8 @@ clientkeys = awful.util.table.join(
     awful.key({ modkey, "Control" }, "space", awful.client.floating.toggle),
     awful.key({ modkey,           }, "BackSpace", function (c) c:swap(awful.client.getmaster()) end),
     awful.key({ modkey,           }, "f", function (c) c.fullscreen = not c.fullscreen end),
-    awful.key({ modkey,           }, "o", awful.client.movetoscreen),
+    awful.key({ modkey,           }, "i", awful.client.movetoscreen),
+    awful.key({ modkey,           }, "o", function (c) awful.client.movetoscreen(c, (mouse.screen - 1) % 3) end),
     awful.key({ modkey,           }, "t", function (c) c.ontop = not c.ontop end),
     awful.key({ modkey,           }, "n", function (c)
             -- The client currently has the input focus, so it cannot be
