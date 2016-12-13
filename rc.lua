@@ -600,6 +600,22 @@ globalkeys = awful.util.table.join(
     -- Remove all notifications
     awful.key({ modkey, "Control" }, "w", function () destroy_all_notifications() end),
 
+    -- Flip orientation of right monitor
+    awful.key({ modkey,         }, "F9", (function()
+        local is_vertical = true
+        return function()
+            local rotation = ""
+            if is_vertical then
+                rotation = "normal"
+            else
+                rotation = "left"
+            end
+            local cmd = "xrandr --output DP-2 --rotate " .. rotation
+            awful.util.spawn_with_shell(cmd)
+            is_vertical = not is_vertical
+        end
+    end)()),
+
     -- Add a tag
     awful.key({ modkey,           }, "a",
         function ()
