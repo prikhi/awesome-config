@@ -602,7 +602,7 @@ globalkeys = awful.util.table.join(
 
     -- Flip orientation of right monitor
     awful.key({ modkey,         }, "F9", (function()
-        local is_vertical = true
+        local is_vertical = false
         return function()
             local rotation = ""
             if is_vertical then
