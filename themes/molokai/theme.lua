@@ -20,6 +20,7 @@ theme.green         = "#A6E22E"
 
 
 theme.font                          = "Dina 8"
+theme.prompt_font                   = theme.font
 
 theme.bg_normal                     = theme.molokai_bkgd
 theme.bg_focus                      = theme.orange
@@ -75,6 +76,8 @@ theme.layout_fairv                  = themes_dir .. "/icons/fairv.png"
 theme.layout_fairh                  = themes_dir .. "/icons/fairh.png"
 theme.layout_spiral                 = themes_dir .. "/icons/spiral.png"
 theme.layout_dwindle                = themes_dir .. "/icons/dwindle.png"
+theme.layout_cornerne               = themes_dir .. "/icons/cornerne.png"
+theme.layout_cornernw               = themes_dir .. "/icons/cornernw.png"
 theme.layout_max                    = themes_dir .. "/icons/max.png"
 theme.layout_fullscreen             = themes_dir .. "/icons/fullscreen.png"
 theme.layout_magnifier              = themes_dir .. "/icons/magnifier.png"
