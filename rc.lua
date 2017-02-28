@@ -142,6 +142,7 @@ tyrannical.tags = {
         layout = awful.layout.tile,
         mwfact = 0.55,
         screen = {1,2,3},
+        selected = true,
     },
     {
         name = "www",
