@@ -120,6 +120,14 @@ local ignore_transparency_names = {
     , 'PlayOnLinux'
     , 'Minecraft 1.7.2'
 }
+
+-- Commnds to Run on Shutdown
+local shutdown_commands = function()
+    --awful.spawn({"mpd", "--kill"})
+    awful.spawn({"pkill", "keepassx"})
+    awful.spawn({"rm", "-f", "pavans_passwords.kdb.lock"})
+    awesome.quit()
+end
 -- }}}
 
 -- {{{ Tags
