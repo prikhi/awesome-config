@@ -259,6 +259,10 @@ tyrannical.properties.floating = {
 tyrannical.properties.size_hints_honor = {
     URxvt = false, mpv = false, Gvim = false
 }
+tyrannical.properties.placement = {
+    keepassx = awful.placement.centered,
+    pinentry = awful.placement.centered,
+}
 -- }}}
 
 -- {{{ Helper functions
