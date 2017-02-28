@@ -100,8 +100,8 @@ local ignore_transparency_classes = {
     , "Cadence.py"
     -- Drawing
     , "Gimp"
+    , "Inkscape"
     , "Pencil"
-    , "Pinta"
     -- Games
     , 'Pcsx2'
     , 'Dolphin-emu'
@@ -184,7 +184,7 @@ tyrannical.tags = {
         layout = awful.layout.suit.floating,
         exclusive = true,
         screen = {1},
-        class = {"Gimp", "Pencil",},
+        class = {"Gimp", "Pencil", "Inkscape"},
         volatile = true,
     },
     {
@@ -195,7 +195,7 @@ tyrannical.tags = {
         screen = {1},
         class = {
             "libreoffice-calc", "libreoffice-draw", "libreoffice-writer",
-            "libreoffice", "soffice"
+            "libreoffice", "soffice", "libreoffice-startcenter"
         },
         volatile = true,
     },
