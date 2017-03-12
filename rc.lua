@@ -902,7 +902,7 @@ r.run("cadence-session-start --system-start")
 -- Music Player Daemon
 --r.run("mpd") -- commented out for systemctl --user enable mpd
 -- Hide the Mouse
-r.run("unclutter -idle 2")
+r.run("unclutter -idle 2 -noevents")
 -- Transparency/Composting
 r.run("compton -b")
 
