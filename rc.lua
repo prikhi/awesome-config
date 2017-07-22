@@ -362,6 +362,7 @@ mpdicon = wibox.widget.imagebox(theme.widget_music)
 mpdiconbg = wibox.container.background(mpdicon, alt_bg)
 mpdwidget = lain.widgets.mpd({
     music_dir = "~/Media/Music",
+    host = "127.0.0.1",
     settings = function()
         if mpd_now.state == "play" then
             widget:set_markup(
@@ -655,13 +656,13 @@ globalkeys = awful.util.table.join(
               {description = "open/close browser", group = "mpd"}),
     -- MPD Controls
     awful.key({ modkey, "Shift"   }, ",",
-              function () awful.spawn.with_shell("mpc -h /tmp/mpd.sock prev"); mpdwidget.update() end,
+              function () awful.spawn.with_shell("mpc prev"); mpdwidget.update() end,
               {description = "previous track", group = "mpd"}),
     awful.key({ modkey, "Shift"   }, ".",
-              function () awful.spawn.with_shell("mpc -h /tmp/mpd.sock next"); mpdwidget.update() end,
+              function () awful.spawn.with_shell("mpc next"); mpdwidget.update() end,
               {description = "next track", group = "mpd"}),
     awful.key({ modkey, "Shift"   }, "p",
-              function () awful.spawn.with_shell("mpc -h /tmp/mpd.sock toggle"); mpdwidget.update() end,
+              function () awful.spawn.with_shell("mpc toggle"); mpdwidget.update() end,
               {description = "toggle playback", group = "mpd"}),
 
     -- Toggle Workrave
