@@ -60,6 +60,22 @@ do
 end
 -- }}}
 
+-- {{{ Utility Functions
+local function append_table(table1, table2)
+    for _, v in pairs(table2) do
+        table.insert(table1, v)
+    end
+    return table1
+end
+
+local function append_tables(table1, tables)
+    for _, v in pairs(tables) do
+        append_table(table1, v)
+    end
+    return table1
+end
+-- }}}
+
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
 beautiful.init(awful.util.get_configuration_dir() .. "themes/molokai/theme.lua")
@@ -85,33 +101,69 @@ awful.layout.layouts = {
     awful.layout.suit.max.fullscreen,
     awful.layout.suit.floating,
 }
--- Classes of Clients to Make Opaque
-local ignore_transparency_classes = {
-    -- Media
-      'Smplayer'
-    , 'Mcomix'
-    , 'Mirage'
-    , 'Vlc'
-    , 'mpv'
-    -- Audio
-    , "Logs.py"
-    , "Claudia.py"
-    , "Catia.py"
-    , "Cadence.py"
-    -- Drawing
-    , "Gimp"
-    , "Inkscape"
-    , "Pencil"
-    -- Games
-    , 'Pcsx2'
+
+--- The following Client class lists are used to reduce duplication between the
+--- ignore_transparency, tyrannical.tags, & tyrannical.floating lists.
+
+-- Audio Clients
+local audio_classes = {
+    -- General
+      'Cadence.py'
+    , 'Catia.py'
+    , 'Claudia.py'
+    , 'Logs.py'
+    , 'Non-Mixer'
+    -- Studio
+    , 'Ardour'
+    , 'Carla2'
+    , 'Hydrogen'
+    , 'Jack-keyboard'
+    , 'Non-Sequencer'
+    , 'Non-Timeline'
+    , 'Zynaddsubfx'
+}
+-- Game Clients
+local game_classes = {
+      'Civ5XP'
+    , 'DefendersQuest'
     , 'Dolphin-emu'
-    , 'Civ5XP'
-    , 'csgo_linux'
+    , 'FrozenSynapse'
+    , 'KOTOR2'
     , 'Mainwindow.py' -- PlayOnLinux
+    , 'Pcsx2'
+    , 'Psychonauts'
+    , 'RogueCastle.bin.x86_64'
+    , 'Steam'
+    , 'Torchlight2.bin.x86_64'
+    , 'Wine'
+    , 'X3TC_main'
+    , 'csgo_linux'
+    , 'dota_linux'
     , 'eu4'
     , 'hoi4'
-    , 'KOTOR2'
+    , 'ns2_linux32'
+    , 'stellaris'
+    , 'superhexagon.x86_64'
 }
+-- Media Clients
+local media_classes = {
+      'Mcomix'
+    , 'Mirage'
+    , 'Vlc'
+    , 'Zathura'
+    , 'feh'
+    , 'mpv'
+}
+-- Graphics Clients
+local graphics_classes = {
+      'Gimp'
+    , 'Inkscape'
+    , 'Pencil'
+}
+
+-- Classes of Clients to Make Opaque
+local ignore_transparency_classes = append_tables(
+    { }, { audio_classes, game_classes, media_classes, graphics_classes })
 -- Instance Names of Clients to Make Opaque
 local ignore_transparency_names = {
     -- Apps
@@ -174,9 +226,7 @@ tyrannical.tags = {
         init = false,
         exclusive = true,
         screen = {1,2,3},
-        class = {
-            "Smplayer", "Vlc", "mpv", "Mirage", "Mcomix", "Zathura", "feh"
-        },
+        class = media_classes,
         volatile = true,
     },
     {
@@ -185,7 +235,7 @@ tyrannical.tags = {
         layout = awful.layout.suit.floating,
         exclusive = true,
         screen = {1},
-        class = {"Gimp", "Pencil", "Inkscape"},
+        class = graphics_classes,
         volatile = true,
     },
     {
@@ -203,29 +253,10 @@ tyrannical.tags = {
     {
         name = "game",
         init = false,
-        layout = awful.layout.suit.max.fullscreen,
+        layout = awful.layout.suit.floating,
         exclusive = true,
         screen = {1},
-        class = {
-              'Civ5XP'
-            , 'DefendersQuest'
-            , 'FrozenSynapse'
-            , 'Psychonauts'
-            , 'RogueCastle.bin.x86_64'
-            , 'Wine'
-            , 'X3TC_main'
-            , 'csgo_linux'
-            , 'dota_linux'
-            , 'ns2_linux32'
-            , 'superhexagon.x86_64'
-            , 'Pcsx2'
-            , 'Dolphin-emu'
-            , 'Torchlight2.bin.x86_64'
-            , 'Mainwindow.py' -- PlayOnLinux
-            , 'eu4'
-            , 'Steam'
-            , "hoi4"
-        },
+        class = game_classes,
         volatile = true,
     },
     {
@@ -233,12 +264,7 @@ tyrannical.tags = {
         init = false,
         layout = awful.layout.suit.floating,
         screen = {1, 2, 3},
-        class = {
-              "Logs.py"
-            , "Claudia.py"
-            , "Catia.py"
-            , "Cadence.py"
-        },
+        class = audio_classes,
         volatile = true,
     },
     {
@@ -253,10 +279,10 @@ tyrannical.tags = {
 tyrannical.properties.intrusive = {
     "feh", "URxvt", "pinentry", "Keepassx", "Gvim", "Steam", "Bitcoin-Qt"
 }
-tyrannical.properties.floating = {
+tyrannical.properties.floating = append_tables({
     "Mumble", "Steam", "VirtualBox", "Mumble", "gimp", "Wine", "pinentry",
     "keepassx", "pidgin", "Bitcon-Qt", "soffice", "Dialog"
-}
+}, { audio_classes, graphics_classes })
 tyrannical.properties.size_hints_honor = {
     URxvt = false, mpv = false, Gvim = false
 }
@@ -266,7 +292,7 @@ tyrannical.properties.placement = {
 }
 -- }}}
 
--- {{{ Helper functions
+-- {{{ Callback Functions
 local function client_menu_toggle_fn()
     local instance = nil
 
