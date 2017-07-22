@@ -289,6 +289,7 @@ tyrannical.properties.size_hints_honor = {
 tyrannical.properties.placement = {
     keepassx = awful.placement.centered,
     pinentry = awful.placement.centered,
+    virtualbox = awful.placement.centered,
 }
 -- }}}
 
@@ -948,7 +949,7 @@ r.run("mumble")
 -- WAN Chat
 r.run("pidgin")
 -- Jack Studio GUI
-r.run("claudia --minimized")
+r.run("claudia")
 -- Web Browser
 r.run("palemoon")
 
