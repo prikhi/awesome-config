@@ -84,6 +84,7 @@ beautiful.init(awful.util.get_configuration_dir() .. "themes/molokai/theme.lua")
 terminal = "urxvtc"
 editor = os.getenv("EDITOR") or "vim"
 editor_cmd = terminal .. " -e " .. editor
+-- TODO: Expand to include stuff like mpd host, network interface, etc.
 
 -- Default modkey.
 modkey = "Mod4"
@@ -116,11 +117,15 @@ local audio_classes = {
     -- Studio
     , 'Ardour'
     , 'Carla2'
+    , 'Foxdot'
     , 'Hydrogen'
     , 'Jack-keyboard'
+    , 'Jamin'
+    , 'Lmms'
     , 'Non-Sequencer'
     , 'Non-Timeline'
     , 'Zynaddsubfx'
+    , 'scide'
 }
 -- Game Clients
 local game_classes = {
