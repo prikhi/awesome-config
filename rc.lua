@@ -932,8 +932,6 @@ r.run("udevil clean")
 r.run("urxvtd -f -o -q")
 -- Jackd Audio Server
 r.run("cadence-session-start --system-start")
--- Music Player Daemon
---r.run("mpd") -- commented out for systemctl --user enable mpd
 -- Hide the Mouse
 r.run("unclutter -idle 2 -noevents")
 -- Transparency/Composting
@@ -943,8 +941,6 @@ r.run("compton -b")
 r.run("~/.bin/mailcheck.sh")
 -- RSI Prevention
 r.run("workrave")
--- Eye Strain Prevention
-r.run("systemctl --user start redshift")
 -- KeePassX Password Manager
 r.run("keepassx -min -lock")
 -- Email Screen Session
@@ -955,6 +951,7 @@ r.run("mumble")
 -- WAN Chat
 r.run("pidgin")
 -- Jack Studio GUI
+r.run("cadence --minimized")
 r.run("claudia")
 -- Web Browser
 r.run("palemoon")
